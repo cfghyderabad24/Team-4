@@ -4,6 +4,7 @@ from users.models import *
 # Create your models here.
 
 class StudentFormA(models.Model):
+  level = models.IntegerField(default=1)
   student = models.ForeignKey(Student, on_delete=models.CASCADE)
   current_fee = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
   prev_edu_name = models.CharField(max_length=100, null=True, blank=True)
@@ -23,4 +24,10 @@ class StudentFormA(models.Model):
   pan_card_file = models.FileField(upload_to='pan_cards/', null=True, blank=True)
   aadhar_card_file = models.FileField(upload_to='aadhar_cards/', null=True, blank=True)
 
+  # Volunteer verefication
+  vol_comments = models.TextField(null=True, blank=True)
+  vol_interview_mode = models.CharField(max_length=100, null=True, blank=True)
 
+  # admin verification
+  inst_comments = models.TextField(null=True, blank=True)
+  inst_interview_mode = models.CharField(max_length=100, null=True, blank=True)

@@ -41,7 +41,7 @@ class StudentCreate(generics.CreateAPIView):
   authentication_classes = [TokenAuthentication]
 
   def perform_create(self, serializer):
-    serializer.save(ngo=self.request.user.ngo)
+    return serializer.save(ngo=self.request.user.ngo)
 
 
 class StudentList(generics.ListAPIView):

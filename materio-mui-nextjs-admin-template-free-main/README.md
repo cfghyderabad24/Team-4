@@ -1,1 +1,1 @@
-<h1>Bhatvera Scholarship Portal</h1>
+<h1>Bhatevara Scholarship Portal</h1>

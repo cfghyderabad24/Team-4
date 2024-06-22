@@ -36,8 +36,23 @@ class StudentFormCreateAPIView(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         request.data['student'] = self.kwargs['pk'];
+        student = Student.objects.get(id=self.kwargs['pk'])
+        student.is_approved = False;
+        student.is_rejected = False;
+        student.level = 2;
+        student.save()
         return super().post(request, *args, **kwargs)
 
     # def perform_create(self, serializer):
     #   student = Student.objects.get(id=self.kwargs['id'])
     #   serializer.save(student=student)
+
+
+# class StudentActionView(APIView):
+#     permission_classes = [IsAuthenticated]
+#     authentication_classes = [TokenAuthentication]
+
+#     def get(self, request, pk, format=None):
+#         resp = request.data.get('response')
+#         student = Student.objects.get(id=pk)
+

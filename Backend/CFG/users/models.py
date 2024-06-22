@@ -76,6 +76,7 @@ class Student(models.Model):
         'Ngo', on_delete=models.CASCADE, null=True, blank=True)
     is_approved = models.BooleanField(default=False)
     is_rejected = models.BooleanField(default=False)
+    level = models.IntegerField(default=2)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'

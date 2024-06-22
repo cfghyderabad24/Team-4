@@ -35,3 +35,9 @@ class LoginUserSerializer(serializers.Serializer):
         raise exceptions.ValidationError("unable to login with these credentials")
     else:
       raise exceptions.ValidationError("provide both email and password")
+
+
+class StudentSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Student
+    fields = "__all__"

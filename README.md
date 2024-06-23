@@ -1,6 +1,8 @@
 # Team-4
 
-
+## Backend REST API Documentation
+https://documenter.getpostman.com/view/28637465/2sA3XWcJty#da4821b1-7e49-403f-a1ae-8a232e6c7c3d
+ 
 ## How to Run
 
 ### Backend-Performed by Naman Arora
@@ -16,3 +18,5 @@
 
 #### Creating a Superuser
 - To create a superuser for accessing the Django admin interface, run: `python manage.py createsuperuser` and follow the prompts.
+
+

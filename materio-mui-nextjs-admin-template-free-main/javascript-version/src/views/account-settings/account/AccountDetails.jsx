@@ -119,39 +119,7 @@ const Login = () => {
     }
   };
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
-
-    try {
-      const response = await fetch(
-        'https://3wh3v3jh-8000.inc1.devtunnels.ms/auth/student/',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization':'Token 33bbad2ce17e1cabb1eaf0b39c2fc3ebf4ef6bcb',
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-      
-      if (!response.ok) {
-        throw new Error('Failed to submit form data');
-      }
-
-      // Handle successful submission
-      console.log('Form data submitted successfully:', formData);
-      // Optionally, you can redirect or perform other actions after successful submission
-
-    } catch (error) {
-      setError('Failed to submit form data');
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  
   const handleNext = () => {
     setFormStep((prevStep) => prevStep + 1);
   };
@@ -159,7 +127,7 @@ const Login = () => {
   const handleBack = () => {
     setFormStep((prevStep) => prevStep - 1);
   };
-
+ 
   const handleNGO=async(e)=>{
     setFormStep((prevStep) => prevStep + 1);
     e.preventDefault();
@@ -178,7 +146,7 @@ const Login = () => {
           body: JSON.stringify(formData),
         }
       );
-      
+      tempid=response.id-1;
       if (!response.ok) {
         throw new Error('Failed to submit form data');
       }
@@ -193,7 +161,42 @@ const Login = () => {
       setLoading(false);
     }
 
+
   }
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        'https://3wh3v3jh-8000.inc1.devtunnels.ms/auth/student/?id=tempid',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization':'Token 33bbad2ce17e1cabb1eaf0b39c2fc3ebf4ef6bcb',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit form data');
+      }
+
+      // Handle successful submission
+      console.log('Form data submitted successfully:', formData);
+      tempid=response.id;
+      // Optionally, you can redirect or perform other actions after successful submission
+
+    } catch (error) {
+      setError('Failed to submit form data');
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen relative p-6">
@@ -210,7 +213,7 @@ const Login = () => {
                 {`Welcome to ${themeConfig.templateName}!`}
               </Typography>
               <Typography className="mb-1">
-                Please sign-in to your account and start the adventure
+                Please sign-in to your account 
               </Typography>
             </div>
 
@@ -447,7 +450,7 @@ const Login = () => {
                 <Button
                   fullWidth
                   variant="contained"
-                  onClick={handleNext}
+                  onClick={handleNGO}
                   className="mb-3"
                 >
                   Next

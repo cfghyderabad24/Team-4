@@ -55,10 +55,10 @@ const VerticalMenu = ({ scrollMenu }) => {
         <SubMenu
           label='Dashboards'
           icon={<i className='ri-home-smile-line' />}
-          suffix={<Chip label='5' size='small' color='error' />}
+          //suffix={<Chip label='' size='small' color='error' />}
         >
           
-          <MenuItem href='/Abcd.jsx'>Analytics</MenuItem>
+          <MenuItem href='/analytics'>Analytics</MenuItem>
         </SubMenu>
         <MenuSection label='Apps & Pages'>
         
@@ -75,6 +75,7 @@ const VerticalMenu = ({ scrollMenu }) => {
             <MenuItem href='/forgot-password' target='_blank'>
               Forgot Password
             </MenuItem>
+            
           </SubMenu>
           
           

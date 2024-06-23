@@ -1,0 +1,40 @@
+.analytics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+  }
+  
+  .chart-container {
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+  }
+  
+  .data-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .data-item {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .value {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  @media (max-width: 600px) {
+    .chart-container {
+      width: 300px;
+      height: 300px;
+    }
+  }

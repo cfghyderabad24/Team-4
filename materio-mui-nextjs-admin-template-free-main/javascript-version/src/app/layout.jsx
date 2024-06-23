@@ -8,7 +8,7 @@ import '@/app/globals.css'
 import '@assets/iconify-icons/generated-icons.css'
 
 export const metadata = {
-  title: 'Bhavtera Scholarship Portal',
+  title: 'MyScholar Portal',
   }
 
 const RootLayout = ({ children }) => {

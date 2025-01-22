@@ -20,3 +20,4 @@ https://documenter.getpostman.com/view/28637465/2sA3XWcJty#da4821b1-7e49-403f-a1
 - To create a superuser for accessing the Django admin interface, run: `python manage.py createsuperuser` and follow the prompts.
 
 
+ <br /> <br /> The code ("Code") in this repository was created solely by the student teams during a coding competition hosted by JPMorgan Chase Bank, N.A. ("JPMC"). JPMC did not create or contribute to the development of the Code. This Code is provided AS IS and JPMC makes no warranty of any kind, express or implied, as to the Code, including but not limited to, merchantability, satisfactory quality, non-infringement, title or fitness for a particular purpose or use.
